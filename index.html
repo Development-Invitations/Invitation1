@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Приглашение на свадьбу</title>
+<meta charset="UTF-8">
+<title>Свадебное приглашение</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+  background: linear-gradient(180deg, #ffd1dc, #ffe4b5);
+  background-attachment: fixed;
+}
+
+/* дорога */
+.road {
+  position: relative;
+  width: 4px;
+  background: white;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/* точки */
+.point {
+  width: 20px;
+  height: 20px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.point:hover {
+  transform: scale(1.3);
+}
+
+/* позиции */
+.p1 { top: 100px; }
+.p2 { top: 300px; }
+.p3 { top: 500px; }
+
+/* конверт */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+</style>
+
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-  <h1>Мы женимся! 💍</h1>
-  <p>Приглашаем вас на нашу свадьбу</p>
-  <p><b>Дата:</b> 10 июня 2026</p>
-  <p><b>Место:</b> Ташкент</p>
+
+<body>
+
+<div class="road">
+
+  <div class="point p1" onclick="openModal(1)"></div>
+  <div class="point p2" onclick="openModal(2)"></div>
+  <div class="point p3" onclick="openModal(3)"></div>
+
+</div>
+
+<!-- Модалка -->
+<div class="modal" id="modal">
+  <div class="modal-content" id="modalText"></div>
+</div>
+
+<script>
+function openModal(step) {
+  let text = "";
+
+  if(step === 1){
+    text = "Дорогой гость! Мы приглашаем вас на нашу свадьбу 💍 Листайте дальше!";
+  }
+  if(step === 2){
+    text = "Дата: 10 июня 2026 📅";
+  }
+  if(step === 3){
+    text = "Место: Ташкент 🎉";
+  }
+
+  document.getElementById("modalText").innerHTML =
+    text + "<br><button onclick='closeModal()'>Закрыть</button>";
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
 </body>
 </html>
