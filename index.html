@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Пригласительная 1</title>
+<title>Приглашение на свадьбу</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap" rel="stylesheet">
 
@@ -17,7 +17,6 @@ body {
     linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     url('images/bg1.avif') center/cover no-repeat fixed;
   color: white;
-  padding: 0 20px;
 }
 
 /* заголовок */
@@ -217,6 +216,19 @@ svg {
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 
   text-align: center;
+  margin-top: -101px;
+}
+
+@media (max-width: 480px) {
+  .final-block {
+    margin-top: -135px;
+  }
+}
+
+@media (max-width: 360px) {
+  .final-block {
+    margin-top: -230px;
+  }
 }
 
 .final-block h2 {
@@ -264,8 +276,8 @@ iframe {
 <body>
 
 <div class="hero">
-  <div class="names">Алексей & Мария</div>
-  <div class="subtitle">Приглашаем вас разделить с нами этот особенный день 💍</div>
+  <div class="names">Shermuhammad & Sarvinoz</div>
+  <div class="subtitle">Sizni hayotimizdagi eng baxtli kunimizga taklif qilamiz 💍</div>
 </div>
 
 <svg viewBox="0 0 400 1400">
@@ -294,7 +306,7 @@ iframe {
 
 <div class="final-block">
 
-    <h2>Ждём вас 💍</h2>
+    <h2>Sizni kutamiz 💍</h2>
 
     <div class="timer">
         <div><span id="days">0</span><br>дней</div>
@@ -304,7 +316,7 @@ iframe {
     </div>
 
     <div class="location">
-        📍 Ресторан «Весна», Ташкент
+        📍 "Do'stlik" toyxonasi
     </div>
 
     <iframe 
@@ -345,15 +357,15 @@ function openModal(step){
   let text = "";
 
   if(step === 1){
-    text = "Дорогой гость 💌<br><br>Мы будем рады видеть вас на нашей свадьбе!";
+    text = "Aziz mehmonimiz 💌<br><br>Hayotimizdagi eng baxtli kunda sizni to‘yimizda ko‘rish biz uchun katta sharaf va quvonch bo‘ladi!";
   }
 
   if(step === 2){
-    text = "📅 10 июня 2026<br>⏰ 18:00";
+    text = "📅 18 iyul 2026<br>⏰ 16:00";
   }
 
   if(step === 3){
-    text = "📍 Ресторан «Весна»<br><br><a class='rsvp-btn' href='#' target='_blank'>Я приду</a>";
+    text = "📍 \"Do'stlik\" toyxonasi<br><br><a class='rsvp-btn' href='#' target='_blank'>Men boraman</a>";
   }
 
   letter.innerHTML = text;
@@ -388,7 +400,7 @@ document.addEventListener("keydown", e=>{
 });
 
 // дата свадьбы (меняешь тут)
-const weddingDate = new Date("March 29, 2026 18:00:00").getTime();
+const weddingDate = new Date("July 18, 2026 16:00:00").getTime();
 
 setInterval(() => {
 
